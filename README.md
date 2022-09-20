@@ -6,11 +6,11 @@
 *This App allows you to store photos and videos (only you can view your photos and videos) and you can post an image and keep people updated  in the posts section 
 
 
-*Homepage
-<img width="910" alt="image" src="https://user-images.githubusercontent.com/71988258/191205618-74d6eabb-0533-453f-927e-05058959ab6a.png">
+1.Homepage
+ *<img width="910" alt="image" src="https://user-images.githubusercontent.com/71988258/191205618-74d6eabb-0533-453f-927e-05058959ab6a.png">
 
-*Photos
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/71988258/191206860-7d9c4666-fa99-4e68-846e-313bb96b79b9.png">
+2.Photos
+ *<img width="800" alt="image" src="https://user-images.githubusercontent.com/71988258/191206860-7d9c4666-fa99-4e68-846e-313bb96b79b9.png">
 
 *Videos
 <img width="752" alt="image" src="https://user-images.githubusercontent.com/71988258/191207020-efd953d1-ead0-4888-80e0-332d507cc203.png">
