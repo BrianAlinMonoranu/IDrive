@@ -1,7 +1,7 @@
 # IDrive
-##This App was created using React JS - React Bootstrap and CSS 
+#This App was created using React JS - React Bootstrap and CSS 
 
-##https://idrive-storage-615e0.web.app/
+#https://idrive-storage-615e0.web.app/
 
 This App allows you to store photos and videos (only you can view your photos and videos) and you can post an image and keep people updated  in the posts section 
 
