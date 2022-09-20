@@ -1,0 +1,87 @@
+.newTitle h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    font-size: 50px;
+}
+
+.tommy {
+    white-space: nowrap;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    margin-top: 10vh;
+}
+
+.title h2,
+.title p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h2 {
+    /* margin-top: 2%; */
+    font-size: 50px;
+}
+
+.title p {
+    font-size: 1.5vw;
+}
+
+.symbol {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.newTitle {
+    display: grid;
+    place-items: center;
+}
+
+.newSize {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .title {
+        display: grid;
+        place-items: center;
+    }
+    .title h1 {
+        color: var(--primary);
+        letter-spacing: 2px;
+    }
+    .title h2,
+    .title p {
+        text-align: center;
+    }
+    .title p {
+        font-size: 20px;
+    }
+    .title h2 {
+        font-size: 23.5px;
+        font-style: bold;
+        font-weight: 600;
+    }
+    .title p {
+        font-size: 10px;
+    }
+}

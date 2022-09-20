@@ -1,41 +1,78 @@
-import React, { useState } from 'react';
-import ProgressBar from './ProgressBar';
+import React, { useState } from "react";
+import ProgressBar from "./ProgressBar";
+import Title from "./Title";
+import NewTitle from "./NewTitle";
+import "./Emoji.css";
+import Image from "./Image";
+import View from "./View";
+import WebNavBar from "./WebNavBar";
+import { ConsoleSqlOutlined } from "@ant-design/icons";
+import { FaFolderPlus } from "react-icons/fa";
 
+const UploadForm = (props) => {
+  const { user } = props;
 
-const UploadForm = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [collection, setCollection] = useState("");
+  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedShow, setSelectedShow] = useState(null);
 
-  const types = ['image/png', 'image/jpeg'];
+  var [name, setName] = useState(null);
+
+  const types = ["image/png", "image/jpeg"];
 
   const handleChange = (e) => {
-    let selected = e.target.files[0];
+    let selected = e.target.files[0]; //Takes the first file given in input
 
+    setCollection("images");
+
+    //If a file is selected and its a png or jpg
     if (selected && types.includes(selected.type)) {
       setFile(selected);
-      setError('');
+      setError("");
     } else {
       setFile(null);
-      setError('Please select an image file (png or jpg)');
+      setError("Please select an image file (png or jpg)");
     }
   };
 
   return (
-    <form>
-       <label>
-        <input type="file" onChange={handleChange} />
-        <span>+</span>
+    <div>
+      <WebNavBar />
+      <NewTitle />
+      <form>
+        <label>
+          <input type="file" onChange={handleChange} />
+          <FaFolderPlus className="folder" />
         </label>
-
-      <div className="output">
-        {/* if the left is through it will output the right */}
-        { error && <div className="error">{ error }</div>}
-        { file && <div>{file.name}</div> }
-        { file && <ProgressBar file = {file} setFile = {setFile} />}
+        <div className="output">
+          {/* if the left is through it will output the right */}
+          {error && <div className="error"> {error} </div>}
+          {file && <div> {file.name} </div>}{" "}
+          {file && (
+            <ProgressBar
+              collection={collection}
+              file={file}
+              setFile={setFile}
+              setSelectedShow={setSelectedShow}
+              user={user}
+            />
+          )}
         </div>
-
-    </form>
+      </form>
+      <div>
+        <Image
+          setSelectedImg={setSelectedImg}
+          setSelectedShow={setSelectedShow}
+          user={user}
+        />
+        {selectedImg && (
+          <View selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        )}
+      </div>
+    </div>
   );
-}
+};
 
 export default UploadForm;

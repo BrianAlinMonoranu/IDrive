@@ -1,27 +1,28 @@
-import React, { useEffect } from 'react'
-import useStorage from '../hooks/useStorage';
-import {motion} from 'framer-motion'
+import React, { useEffect } from "react";
+import useStorage from "../hooks/useStorage";
+import { motion } from "framer-motion";
 
-const ProgressBar = ({file, setFile}) => {
-    const {url, progress} = useStorage(file);
-    console.log(url);
-    console.log(progress)
+const ProgressBar = ({ collection, file, setFile, setSelectedShow, user }) => {
+  const { url, progress, newUser } = useStorage(file, collection, user);
+  console.log(url);
+  console.log(progress);
+  console.log("Hello Progress");
 
-    useEffect (() => {
-        //if Url exists then we set the fil to null and therefore no more progress bar
-        if(url){
-            setFile(null);
-        }
+  useEffect(() => {
+    //if Url exists then we set the fil to null and therefore no more progress bar
+    if (url) {
+      setFile(null);
+    }
+  }, [url, setFile]);
+  //If Url and setFile changes changes then funtion above will activate
 
-    }, [url, setFile])
-    //If Url changes then funtion above will activate
+  return (
+    <motion.div
+      className="progress-bar"
+      initial={{ width: 0 }}
+      animate={{ width: progress + "%" }}
+    ></motion.div>
+  );
+};
 
-
-    return ( 
-    <motion.div className = 'progress-bar'
-    initial = {{width: 0}}
-    animate = {{width: progress + '%'}} ></motion.div>
-    )
-}
-
-export default ProgressBar
+export default ProgressBar;

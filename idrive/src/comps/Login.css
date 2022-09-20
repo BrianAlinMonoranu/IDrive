@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#sign-in-form {
+    max-width: 330px;
+}
+
+#main-container {
+    place-items: center center;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+}
+
+.t {
+    min-height: 100vh;
+    display: grid;
+    font-family: Roboto;
+}
+
+.ic {
+    font-size: 80px;
+}
+
+.spans {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+p {
+    font-size: 16px;
+    font-family: "Roboto";
+}
+
+p span:hover {
+    color: lightslategray;
+}
+
+.errorMsg {
+    margin-top: 2%;
+    color: red;
+    font-size: 16px;
+}
+
+.arr {
+    margin-top: 5%;
+    font-size: 30px;
+}

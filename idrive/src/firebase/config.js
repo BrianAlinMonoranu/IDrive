@@ -1,24 +1,24 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/storage';
-import 'firebase/compat/firestore';
-
-
+import firebase from "firebase/compat/app";
+import "firebase/compat/storage";
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBcVqqvOvmEQFGWDabSqwtvKgJw_6azFCQ",
-    authDomain: "idrive-eb75d.firebaseapp.com",
-    projectId: "idrive-eb75d",
-    storageBucket: "idrive-eb75d.appspot.com",
-    messagingSenderId: "421251816914",
-    appId: "1:421251816914:web:6543902bb3b20cdbcffc0b",
-    measurementId: "G-G0RCV19JXG"
+  apiKey: "AIzaSyBTjZATUA_yAJEplv7MP8yC6FDnmAieCLU",
+  authDomain: "idrive-storage-615e0.firebaseapp.com",
+  projectId: "idrive-storage-615e0",
+  storageBucket: "idrive-storage-615e0.appspot.com",
+  messagingSenderId: "103731101836",
+  appId: "1:103731101836:web:9cce734d7a34242ee7bba9",
+  measurementId: "G-3NPDZ0JBXY",
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const projectStorage = firebase.storage();
-const projectFirestore = firebase.firestore();
+const projectStorage = firebaseApp.storage();
+const projectFirestore = firebaseApp.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+const auth = firebase.auth();
 
-export { projectStorage, projectFirestore, timestamp };
+export { projectStorage, projectFirestore, timestamp, auth };
