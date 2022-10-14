@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 
 const ProgressBar = ({ collection, file, setFile, setSelectedShow, user }) => {
   const { url, progress, newUser } = useStorage(file, collection, user);
-  console.log(url);
-  console.log(progress);
-  console.log("Hello Progress");
 
   useEffect(() => {
     //if Url exists then we set the fil to null and therefore no more progress bar
