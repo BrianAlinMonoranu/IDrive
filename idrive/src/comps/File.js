@@ -11,8 +11,6 @@ import "./image.css";
 function File({ setSelectedD, documents, user }) {
   const { docs } = useFirestore("documents");
 
-  console.log(docs);
-
   return (
     <div class="container d-flex flex-column align-items-center">
       {docs &&
