@@ -29,7 +29,7 @@ const Title = ({ user }) => {
       <FaMixcloud className="tommy" />
       <h2> Welcome </h2>
       <h2 style={{ marginBottom: "2%" }}>{user.email} </h2>{" "}
-      <p className="gap"> Store and Share your photos - Videos </p>
+      <p className="gap"> - Store and share photos and videos with IDrive - </p>
       <FaAngleDoubleDown className="icon-arr" />
     </div>
   );
