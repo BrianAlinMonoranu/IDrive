@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { FaBuffer } from "react-icons/fa";
 import { FaRegLightbulb } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import Carousel from "react-bootstrap/Carousel";
-import "./Emoji.css";
+import "./Home.css";
 
 function About() {
   return (
@@ -48,7 +48,7 @@ function About() {
               <FaRegEye className="icon-size" />
             </div>
             <div className="content">
-              <h2> Sit back, Enjoy and Relax </h2>{" "}
+              <h2> Sit back, Enjoy and Relax </h2>
               <p>
                 IDrive enables you are able to watch all your favourite videos
                 through this app and view all your favourite files in this app{" "}

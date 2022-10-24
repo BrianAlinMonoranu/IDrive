@@ -1,28 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { FaRegFileCode } from "react-icons/fa";
-import { FaCameraRetro } from "react-icons/fa";
 import { FaGlobeAmericas } from "react-icons/fa";
-import { FaVideo } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import Title from "./Title";
-import { FaBuffer } from "react-icons/fa";
-import { FaRegLightbulb } from "react-icons/fa";
-import { FaRegEye } from "react-icons/fa";
-import WebNavBar from "./WebNavBar";
-import Login from "./Login";
+import { FaCameraRetro } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import Carousel from "react-bootstrap/Carousel";
+import { motion } from "framer-motion";
+import { FaVideo } from "react-icons/fa";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import WebNavBar from "./WebNavBar";
 import { send } from "emailjs-com";
-import "./Emoji.css";
+import Login from "./Login";
+import Title from "./Title";
 import About from "./About";
+import "./Home.css";
 
-function Emoji(props) {
-  const form = useRef();
-
+function Home(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -43,6 +35,10 @@ function Emoji(props) {
           response.status,
           response.text
         );
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
       })
       .catch((err) => {
         console.log("Failed", err);
@@ -68,15 +64,11 @@ function Emoji(props) {
     setRegisterEmail,
     setRegisterPassword,
     emailError,
-    setEmailError,
     passwordError,
-    setPasswordError,
     hasAccount,
     setHasAccount,
     user,
     setUser,
-    clearInputs,
-    clearError,
     handleLogin,
     handleSignUp,
     handleLogout,
@@ -142,18 +134,14 @@ function Emoji(props) {
               >
                 <FaVideo className="pane-icon" />
                 <div class="about__buttons">
-                  {" "}
                   <Link to="/UploadVideo" className="button-30">
-                    {" "}
-                    Videos{" "}
-                  </Link>{" "}
-                </div>{" "}
-              </motion.div>{" "}
-            </div>{" "}
+                    Videos
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
             <About />
             <div className="section3" id="section3">
-              {/* <h1 className="me-auto ms-auto mt-5">Contact Us</h1> */}
-
               <div className="container">
                 <form onSubmit={sendEmail}>
                   <div className="row pt-5 mx-auto">
@@ -268,11 +256,11 @@ function Emoji(props) {
             emailError={emailError}
             passwordError={passwordError}
             setUser={setUser}
-          />{" "}
+          />
         </>
-      )}{" "}
+      )}
     </div>
   );
 }
 
-export default Emoji;
+export default Home;

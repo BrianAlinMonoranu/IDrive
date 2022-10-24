@@ -1,12 +1,8 @@
-import { motion } from "framer-motion";
-import { auth } from "../firebase/config";
 import { FaMixcloud } from "react-icons/fa";
 import React from "react";
-import { useEffect } from "react";
 import "./Login.css";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import { FaArrowAltCircleDown } from "react-icons/fa";
@@ -26,7 +22,7 @@ function Login({
 }) {
   return (
     <body>
-      <div className="t">
+      <div className="Login-page">
         <Container id="main-container" className="d-grid h-100">
           <Form id="sign-in-form" className="text-center w-100">
             <FaMixcloud className="ic mb-4" />

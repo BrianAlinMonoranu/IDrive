@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useFirestore from "./useFirestore";
 import { motion } from "framer-motion";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { FaFile } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import ListGroup from "react-bootstrap/ListGroup";
 import "./image.css";
 
 function File({ setSelectedD, documents, user }) {

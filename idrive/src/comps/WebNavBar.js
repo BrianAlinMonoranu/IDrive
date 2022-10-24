@@ -31,10 +31,10 @@ function WebNavBar() {
             <Nav.Link as={Link} to={"/"} className="ms-5 me-2">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to={"#section2"} className="ms-5 me-2">
+            <Nav.Link as={Link} to={"/#section2"} className="ms-5 me-2">
               About
             </Nav.Link>
-            <Nav.Link as={Link} to={"#section3"} className="ms-5 me-2">
+            <Nav.Link as={Link} to={"/#section3"} className="ms-5 me-2">
               Contact Us
             </Nav.Link>
             <Nav.Link className="ms-5 me-2">

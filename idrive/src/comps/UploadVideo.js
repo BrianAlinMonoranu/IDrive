@@ -1,11 +1,10 @@
+import { FaFolderPlus } from "react-icons/fa";
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
-import Title from "./Title";
+import VideoView from "./VideoView";
 import WebNavBar from "./WebNavBar";
 import NewTitle from "./NewTitle";
 import Video from "./Video";
-import VideoView from "./VideoView";
-import { FaFolderPlus } from "react-icons/fa";
 
 const UploadVideo = (props) => {
   const { user } = props;
@@ -39,9 +38,8 @@ const UploadVideo = (props) => {
         <label>
           <input type="file" onChange={handleChange} />
           <FaFolderPlus className="folder" />
-        </label>{" "}
+        </label>
         <div className="output">
-          {" "}
           {/* if the left is through it will output the right */}{" "}
           {error && <div className="error"> {error} </div>}{" "}
           {file && <div> {file.name} </div>}{" "}
@@ -52,8 +50,8 @@ const UploadVideo = (props) => {
               setFile={setFile}
               user={user}
             />
-          )}{" "}
-        </div>{" "}
+          )}
+        </div>
       </form>
       <div>
         <Video setSelectedV={setSelectedV} user={user} />

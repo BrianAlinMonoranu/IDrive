@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Title from "./comps/Title";
-import UploadForm from "./comps/UploadForm";
-import Image from "./comps/Image";
-import View from "./comps/View";
-import Emoji from "./comps/Emoji";
 import UploadVideo from "./comps/UploadVideo";
+import UploadForm from "./comps/UploadForm";
+import CreateFile from "./comps/CreateFile";
+import firebase from "firebase/compat/app";
+import { auth } from "./firebase/config";
+import About from "./comps/About";
+import Login from "./comps/Login";
+import Home from "./comps/Home";
+
 import {
   BrowserRouter,
   HashLink as Link,
   Route,
   Routes,
 } from "react-router-dom";
-import { auth } from "./firebase/config";
-import firebase from "firebase/compat/app";
-import Login from "./comps/Login";
-import CreateFile from "./comps/CreateFile";
-import About from "./comps/About";
 
 function App() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -98,7 +96,7 @@ function App() {
         <Route
           path="/"
           element={
-            <Emoji
+            <Home
               registerEmail={registerEmail}
               registerPassword={registerPassword}
               setRegisterEmail={setRegisterEmail}

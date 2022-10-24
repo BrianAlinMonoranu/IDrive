@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
 import ReactPlayer from "react-player";
-import UploadVideo from "./UploadVideo";
 
 function VideoView({ selectedV, setSelectedV }) {
   const handleClick = (e) => {
@@ -11,10 +9,6 @@ function VideoView({ selectedV, setSelectedV }) {
     }
   };
 
-  const download = (e) => {
-    console.log("hello");
-    e.target.innerHTML = ` <a download= {selectedImg} href="Brian_Alin_Monoranu___CV .pdf">`;
-  };
   return (
     <motion.div
       className="backdrop"

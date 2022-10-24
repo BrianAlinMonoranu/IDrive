@@ -1,13 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { FaMixcloud } from "react-icons/fa";
-import { FaEllipsisH } from "react-icons/fa";
-import { FaAngleDoubleDown } from "react-icons/fa";
-import Toast from "react-bootstrap/Toast";
-import "./Title.css";
-import { useState } from "react";
-import Form from "react-bootstrap/Form";
 import ToastContainer from "react-bootstrap/ToastContainer";
+import { FaAngleDoubleDown } from "react-icons/fa";
+import { FaMixcloud } from "react-icons/fa";
+import Toast from "react-bootstrap/Toast";
+import { useState } from "react";
+import React from "react";
+import "./Title.css";
 
 const Title = ({ user }) => {
   const [showA, setShowA] = useState(true);

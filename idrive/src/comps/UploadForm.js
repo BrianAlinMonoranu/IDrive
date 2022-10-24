@@ -1,13 +1,11 @@
+import { FaFolderPlus } from "react-icons/fa";
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
-import Title from "./Title";
+import WebNavBar from "./WebNavBar";
 import NewTitle from "./NewTitle";
-import "./Emoji.css";
 import Image from "./Image";
 import View from "./View";
-import WebNavBar from "./WebNavBar";
-import { ConsoleSqlOutlined } from "@ant-design/icons";
-import { FaFolderPlus } from "react-icons/fa";
+import "./Home.css";
 
 const UploadForm = (props) => {
   const { user } = props;
@@ -17,8 +15,6 @@ const UploadForm = (props) => {
   const [collection, setCollection] = useState("");
   const [selectedImg, setSelectedImg] = useState(null);
   const [selectedShow, setSelectedShow] = useState(null);
-
-  var [name, setName] = useState(null);
 
   const types = ["image/png", "image/jpeg"];
 
