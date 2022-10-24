@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import useFirestore from "./useFirestore";
+import useFirestore from "../useFirestore";
 import { motion } from "framer-motion";
-import Background from "./studio.png";
+import Background from "../studio.png";
 
 function Video({ setSelectedV, user }) {
   const { docs } = useFirestore("videos");

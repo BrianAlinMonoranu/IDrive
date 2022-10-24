@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import UploadVideo from "./comps/UploadVideo";
-import UploadForm from "./comps/UploadForm";
-import CreateFile from "./comps/CreateFile";
+import UploadVideo from "./comps/videos-section/UploadVideo";
+import UploadForm from "./comps/photos-section/UploadForm";
+import CreateFile from "./comps/posts-section/CreateFile";
 import firebase from "firebase/compat/app";
 import { auth } from "./firebase/config";
-import About from "./comps/About";
-import Login from "./comps/Login";
-import Home from "./comps/Home";
+import About from "./comps/homepage/About";
+import Login from "./comps/Login/Login";
+import Home from "./comps/homepage/Home";
 
 import {
   BrowserRouter,
@@ -21,9 +21,7 @@ function App() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
-  const [form, setForm] = useState(null);
   const [user, setUser] = useState({});
-  const [name, setName] = useState("");
 
   const clearInputs = () => {
     setRegisterEmail("");

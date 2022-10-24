@@ -1,27 +1,24 @@
 import { FaFolderPlus } from "react-icons/fa";
 import React, { useState } from "react";
-import ProgressBar from "./ProgressBar";
-import WebNavBar from "./WebNavBar";
-import NewTitle from "./NewTitle";
-import Image from "./Image";
-import View from "./View";
-import "./Home.css";
+import ProgressBar from "../ProgressBar";
+import VideoView from "./VideoView";
+import WebNavBar from "../WebNavBar";
+import NewTitle from "../NewTitle";
+import Video from "./Video";
 
-const UploadForm = (props) => {
+const UploadVideo = (props) => {
   const { user } = props;
-
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [collection, setCollection] = useState("");
-  const [selectedImg, setSelectedImg] = useState(null);
-  const [selectedShow, setSelectedShow] = useState(null);
+  const [selectedV, setSelectedV] = useState(null);
 
-  const types = ["image/png", "image/jpeg"];
+  const types = ["video/mp4"];
 
   const handleChange = (e) => {
     let selected = e.target.files[0]; //Takes the first file given in input
 
-    setCollection("images");
+    setCollection("videos");
 
     //If a file is selected and its a png or jpg
     if (selected && types.includes(selected.type)) {
@@ -29,7 +26,7 @@ const UploadForm = (props) => {
       setError("");
     } else {
       setFile(null);
-      setError("Please select an image file (png or jpg)");
+      setError("Please select a MP4 video");
     }
   };
 
@@ -43,32 +40,27 @@ const UploadForm = (props) => {
           <FaFolderPlus className="folder" />
         </label>
         <div className="output">
-          {/* if the left is through it will output the right */}
-          {error && <div className="error"> {error} </div>}
+          {/* if the left is through it will output the right */}{" "}
+          {error && <div className="error"> {error} </div>}{" "}
           {file && <div> {file.name} </div>}{" "}
           {file && (
             <ProgressBar
               collection={collection}
               file={file}
               setFile={setFile}
-              setSelectedShow={setSelectedShow}
               user={user}
             />
           )}
         </div>
       </form>
       <div>
-        <Image
-          setSelectedImg={setSelectedImg}
-          setSelectedShow={setSelectedShow}
-          user={user}
-        />
-        {selectedImg && (
-          <View selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        <Video setSelectedV={setSelectedV} user={user} />
+        {selectedV && (
+          <VideoView selectedV={selectedV} setSelectedV={setSelectedV} />
         )}
       </div>
     </div>
   );
 };
 
-export default UploadForm;
+export default UploadVideo;

@@ -1,24 +1,26 @@
-import { FaFolderPlus } from "react-icons/fa";
 import React, { useState } from "react";
-import ProgressBar from "./ProgressBar";
-import VideoView from "./VideoView";
-import WebNavBar from "./WebNavBar";
-import NewTitle from "./NewTitle";
-import Video from "./Video";
+import ProgressBar from "../ProgressBar";
+import WebNavBar from "../WebNavBar";
+import NewTitle from "../NewTitle";
+import { FaFolderPlus } from "react-icons/fa";
+import File from "./File";
+import ViewPost from "./ViewPost";
 
-const UploadVideo = (props) => {
-  const { user } = props;
+const CreateFile = (props) => {
+  const { user, handleLogout } = props;
+
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [collection, setCollection] = useState("");
-  const [selectedV, setSelectedV] = useState(null);
+  const [selectedD, setSelectedD] = useState(null);
 
-  const types = ["video/mp4"];
+  const documents = [];
+  const types = ["image/png", "image/jpeg"];
 
   const handleChange = (e) => {
     let selected = e.target.files[0]; //Takes the first file given in input
 
-    setCollection("videos");
+    setCollection("documents");
 
     //If a file is selected and its a png or jpg
     if (selected && types.includes(selected.type)) {
@@ -26,13 +28,13 @@ const UploadVideo = (props) => {
       setError("");
     } else {
       setFile(null);
-      setError("Please select a MP4 video");
+      setError("Please select a PNG or JPEG");
     }
   };
 
   return (
     <div>
-      <WebNavBar />
+      <WebNavBar handleLogout={handleLogout} />
       <NewTitle />
       <form>
         <label>
@@ -40,9 +42,8 @@ const UploadVideo = (props) => {
           <FaFolderPlus className="folder" />
         </label>
         <div className="output">
-          {/* if the left is through it will output the right */}{" "}
-          {error && <div className="error"> {error} </div>}{" "}
-          {file && <div> {file.name} </div>}{" "}
+          {error && <div className="error"> {error} </div>}
+          {file && <div> {file.name} </div>}
           {file && (
             <ProgressBar
               collection={collection}
@@ -54,13 +55,13 @@ const UploadVideo = (props) => {
         </div>
       </form>
       <div>
-        <Video setSelectedV={setSelectedV} user={user} />
-        {selectedV && (
-          <VideoView selectedV={selectedV} setSelectedV={setSelectedV} />
+        <File setSelectedD={setSelectedD} documents={documents} user={user} />
+        {selectedD && (
+          <ViewPost selectedD={selectedD} setSelectedD={setSelectedD} />
         )}
       </div>
     </div>
   );
 };
 
-export default UploadVideo;
+export default CreateFile;

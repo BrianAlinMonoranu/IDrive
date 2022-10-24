@@ -1,8 +1,8 @@
 import React from "react";
-import useFirestore from "./useFirestore";
+import useFirestore from "../useFirestore";
 import { motion } from "framer-motion";
 import Card from "react-bootstrap/Card";
-import "./image.css";
+import "../photos-section/image.css";
 
 function File({ setSelectedD, documents, user }) {
   const { docs } = useFirestore("documents");

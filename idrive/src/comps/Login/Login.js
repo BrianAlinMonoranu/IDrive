@@ -1,11 +1,11 @@
+import { FaArrowAltCircleDown } from "react-icons/fa";
+import Container from "react-bootstrap/Container";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { FaMixcloud } from "react-icons/fa";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import React from "react";
 import "./Login.css";
-import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import { FaArrowAltCircleDown } from "react-icons/fa";
 
 function Login({
   registerEmail,

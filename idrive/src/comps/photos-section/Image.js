@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useFirestore from "./useFirestore";
+import useFirestore from "../useFirestore";
 import { motion } from "framer-motion";
 import "./image.css";
 

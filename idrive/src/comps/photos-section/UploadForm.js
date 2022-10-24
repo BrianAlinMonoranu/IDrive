@@ -1,26 +1,27 @@
-import React, { useState } from "react";
-import ProgressBar from "./ProgressBar";
-import WebNavBar from "./WebNavBar";
-import NewTitle from "./NewTitle";
 import { FaFolderPlus } from "react-icons/fa";
-import File from "./File";
-import ViewPost from "./ViewPost";
+import React, { useState } from "react";
+import ProgressBar from "../ProgressBar";
+import WebNavBar from "../WebNavBar";
+import NewTitle from "../NewTitle";
+import Image from "./Image";
+import View from "./View";
+import "../homepage/Home.css";
 
-const CreateFile = (props) => {
-  const { user, handleLogout } = props;
+const UploadForm = (props) => {
+  const { user } = props;
 
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [collection, setCollection] = useState("");
-  const [selectedD, setSelectedD] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedShow, setSelectedShow] = useState(null);
 
-  const documents = [];
   const types = ["image/png", "image/jpeg"];
 
   const handleChange = (e) => {
     let selected = e.target.files[0]; //Takes the first file given in input
 
-    setCollection("documents");
+    setCollection("images");
 
     //If a file is selected and its a png or jpg
     if (selected && types.includes(selected.type)) {
@@ -28,13 +29,13 @@ const CreateFile = (props) => {
       setError("");
     } else {
       setFile(null);
-      setError("Please select a PNG or JPEG");
+      setError("Please select an image file (png or jpg)");
     }
   };
 
   return (
     <div>
-      <WebNavBar handleLogout={handleLogout} />
+      <WebNavBar />
       <NewTitle />
       <form>
         <label>
@@ -42,26 +43,32 @@ const CreateFile = (props) => {
           <FaFolderPlus className="folder" />
         </label>
         <div className="output">
+          {/* if the left is through it will output the right */}
           {error && <div className="error"> {error} </div>}
-          {file && <div> {file.name} </div>}
+          {file && <div> {file.name} </div>}{" "}
           {file && (
             <ProgressBar
               collection={collection}
               file={file}
               setFile={setFile}
+              setSelectedShow={setSelectedShow}
               user={user}
             />
           )}
         </div>
       </form>
       <div>
-        <File setSelectedD={setSelectedD} documents={documents} user={user} />
-        {selectedD && (
-          <ViewPost selectedD={selectedD} setSelectedD={setSelectedD} />
+        <Image
+          setSelectedImg={setSelectedImg}
+          setSelectedShow={setSelectedShow}
+          user={user}
+        />
+        {selectedImg && (
+          <View selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
         )}
       </div>
     </div>
   );
 };
 
-export default CreateFile;
+export default UploadForm;

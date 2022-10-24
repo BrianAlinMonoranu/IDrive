@@ -1,6 +1,6 @@
 import { FaMixcloud } from "react-icons/fa";
 import React from "react";
-import "./Title.css";
+import "../comps/homepage/Title.css";
 
 const Title = () => {
   return (
