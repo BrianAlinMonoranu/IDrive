@@ -5,7 +5,7 @@ import "../comps/homepage/Title.css";
 const Title = () => {
   return (
     <div className="newTitle">
-      <FaMixcloud className="logo" />
+      <FaMixcloud className="logo"/>
       <h1> IDrive </h1>
       <p className="gap"> - Store and share photos and videos with IDrive - </p>
     </div>
